@@ -9,7 +9,7 @@ current_status = true
 
 
 scheduler = Rufus::Scheduler.new
-scheduler.every "30s" do
+scheduler.every "15m" do
   server = bot.servers[ENV["SERVER_ID"].to_i]
   channels = server.text_channels.select { |c| (c.name == "bot-spam2" || c.name == "bot-spam") }
   role = server.roles.select {|r| r.name == "@everyone"}.first
